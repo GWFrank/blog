@@ -15,11 +15,8 @@ titles:
   zh-HK   : *ZH_HANT
   ko      : &KO       소개
   ko-KR   : *KO
-key: page-about
+key: page-aboout
 ---
 
-Just say something about yourself. :+1:
 
-{% highlight javascript %}
-(() => console.log('hello, world!'))();
-{% endhighlight %}
+這個部落格是由一位正在學習Computer Science，且喜歡Fingerstyle的大學生所經營的，大部分的內容只是為了記錄而非教學。
