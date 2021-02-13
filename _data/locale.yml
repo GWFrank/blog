@@ -64,7 +64,7 @@ zh-SG:
 zh-Hant: &ZH_HANT
   SUBSCRIBE               : "訂閱"
   READMORE                : "閱讀更多"
-  SEARCH                  : "搜索"
+  SEARCH                  : "搜尋"
   CANCEL                  : "取消"
   VIEWS                   : "閱讀"
   LAST_UPDATED            : "更新於"
@@ -77,8 +77,8 @@ zh-Hant: &ZH_HANT
   POST_ON_GITHUB          : "在 Github 上修改"
   FOLLOW_ME               : "在 [NAME] 上關注我。"
   FOLLOW_US               : "在 [NAME] 上關注我們。"
-  EMAIL_ME                : "給我發郵件。"
-  EMAIL_US                : "給我們發郵件。"
+  EMAIL_ME                : "發郵件給我。"
+  EMAIL_US                : "發郵件給我們。"
   COPYRIGHT_DATES         : "2021"
 
 zh-TW:
