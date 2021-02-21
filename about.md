@@ -18,5 +18,6 @@ titles:
 key: page-aboout
 ---
 
+這個部落格大部分的內容只是為了記錄而非教學。
 
-這個部落格是由一位正在學習Computer Science，且喜歡Fingerstyle的大學生所經營的，大部分的內容只是為了記錄而非教學。
+Coding, Fingerstyle Guitar, Yugioh.
