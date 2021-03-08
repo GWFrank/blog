@@ -4,13 +4,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"><title>計概期末專題 黑白棋Agent - GWFrank's Blog</title>
 
 <meta name="description" content="TLDR今年(109-1)計概單班的期末專題(其實應該只算是一次作業？)是做一個黑白棋Agent，我和隊友用minimax + 神經網路做的evaluation實做，最後在31組中拿下第一名，對所有其他組都有超過0.5的勝率。這篇文章將會稍微紀錄一下開發的過程和一些心得及想法。">
-<link rel="canonical" href="/2021/02/22/%E8%A8%88%E6%A6%82%E6%9C%9F%E6%9C%AB%E5%B0%88%E9%A1%8C-%E9%BB%91%E7%99%BD%E6%A3%8B.html"><link rel="alternate" type="application/rss+xml" title="GWFrank's Blog" href="/feed.xml"><link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+<link rel="canonical" href="/blog/2021/02/22/%E8%A8%88%E6%A6%82%E6%9C%9F%E6%9C%AB%E5%B0%88%E9%A1%8C-%E9%BB%91%E7%99%BD%E6%A3%8B.html"><link rel="alternate" type="application/rss+xml" title="GWFrank's Blog" href="/blog/feed.xml"><link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
 <link rel="manifest" href="/favicon/site.webmanifest">
 <link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#2d384b">
 <meta name="msapplication-TileColor" content="#2b5797">
-<meta name="theme-color" content="#ffffff"><link rel="stylesheet" href="/assets/css/main.css"><link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/font-awesome/5.15.1/css/all.css" ><!-- start custom head snippets -->
+<meta name="theme-color" content="#ffffff"><link rel="stylesheet" href="/blog/assets/css/main.css"><link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/font-awesome/5.15.1/css/all.css" ><!-- start custom head snippets -->
 
 <!-- end custom head snippets -->
 <script>(function() {
@@ -246,7 +246,7 @@
         }
       },
       paths: {
-        search_js: '/assets/search.js'
+        search_js: '/blog/assets/search.js'
       }
     };
     window.TEXT_VARIABLES = TEXT_VARIABLES;
@@ -269,8 +269,8 @@
 </g>
 </svg>
 <a title="I write things about programming, yugioh , and fingerstyle guitar.
-" href="/">GWFrank's Blog</a></div><button class="button button--secondary button--circle search-button js-search-toggle"><i class="fas fa-search"></i></button></div><nav class="navigation">
-        <ul><li class="navigation__item"><a href="/about.html">關於</a></li><li><button class="button button--secondary button--circle search-button js-search-toggle"><i class="fas fa-search"></i></button></li></ul>
+" href="/blog/">GWFrank's Blog</a></div><button class="button button--secondary button--circle search-button js-search-toggle"><i class="fas fa-search"></i></button></div><nav class="navigation">
+        <ul><li class="navigation__item"><a href="/blog/about.html">關於</a></li><li><button class="button button--secondary button--circle search-button js-search-toggle"><i class="fas fa-search"></i></button></li></ul>
       </nav></div>
   </header>
 </div><div class="page__content"><div class ="main"><div class="grid grid--reverse">
@@ -287,13 +287,13 @@
             href="https://github.com/GWFrank/blog/tree/main/_posts/2021-02-22-計概期末專題-黑白棋.md">
             <i class="far fa-edit"></i></a></div><meta itemprop="headline" content="計概期末專題 黑白棋Agent"><div class="article__info clearfix"><ul class="left-col menu"><li>
               <a class="button button--secondary button--pill button--sm"
-                href="/archive.html?tag=Coding">Coding</a>
+                href="/blog/archive.html?tag=Coding">Coding</a>
             </li><li>
               <a class="button button--secondary button--pill button--sm"
-                href="/archive.html?tag=Python">Python</a>
+                href="/blog/archive.html?tag=Python">Python</a>
             </li><li>
               <a class="button button--secondary button--pill button--sm"
-                href="/archive.html?tag=Reversi">Reversi</a>
+                href="/blog/archive.html?tag=Reversi">Reversi</a>
             </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>2021年 02月22日</span>
             </li></ul></div><meta itemprop="author" content="GWFrank"/><meta itemprop="datePublished" content="2021-02-22T00:00:00+08:00">
     <meta itemprop="keywords" content="Coding,Python,Reversi"><div class="js-article-content"><div class="layout--article"><!-- start custom article top snippet -->
@@ -698,7 +698,7 @@
 </div><section class="article__sharing d-print-none"></section><div class="d-print-none"><footer class="article__footer"><meta itemprop="dateModified" content="2021-02-22T00:00:00+08:00"><!-- start custom article footer snippet -->
 
 <!-- end custom article footer snippet -->
-<div class="article__subscribe"><div class="subscribe"><i class="fas fa-rss"></i> <a type="application/rss+xml" href="/feed.xml">訂閱</a></div>
+<div class="article__subscribe"><div class="subscribe"><i class="fas fa-rss"></i> <a type="application/rss+xml" href="/blog/feed.xml">訂閱</a></div>
 </div><div class="article__license"><div class="license">
     <p>本文遵守 <a itemprop="license" rel="license" href="https://creativecommons.org/licenses/by-nc/4.0/">Attribution-NonCommercial 4.0 International</a> 許可協議。
       <a rel="license" href="https://creativecommons.org/licenses/by-nc/4.0/">
@@ -706,7 +706,7 @@
       </a>
     </p>
   </div></div></footer>
-<div class="article__section-navigator clearfix"><div class="next"><span>下篇</span><a href="/2021/03/08/%E8%A7%A3%E6%B1%BAKDE-Konsole%E5%9C%A8%E9%9D%9E%E6%95%B4%E6%95%B8%E5%80%8D%E7%B8%AE%E6%94%BE%E6%99%82%E7%9A%84%E6%B0%B4%E5%B9%B3%E7%99%BD%E8%89%B2%E7%B7%9A%E6%A2%9D.html">解決KDE Konsole在非整數倍縮放時的水平白色線條</a></div></div></div>
+<div class="article__section-navigator clearfix"><div class="next"><span>下篇</span><a href="/blog/2021/03/08/%E8%A7%A3%E6%B1%BAKDE-Konsole%E5%9C%A8%E9%9D%9E%E6%95%B4%E6%95%B8%E5%80%8D%E7%B8%AE%E6%94%BE%E6%99%82%E7%9A%84%E6%B0%B4%E5%B9%B3%E7%99%BD%E8%89%B2%E7%B7%9A%E6%A2%9D.html">解決KDE Konsole在非整數倍縮放時的水平白色線條</a></div></div></div>
 
 </div>
 
@@ -742,7 +742,7 @@
             </div></div></div><div class="page__footer d-print-none">
 <footer class="footer py-4 js-page-footer">
   <div class="main"><div itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="GWFrank"><meta itemprop="url" content="/"><meta itemprop="description" content="A college student studying computer science."><div class="footer__author-links"><div class="author-links">
+      <meta itemprop="name" content="GWFrank"><meta itemprop="url" content="/blog/"><meta itemprop="description" content="A college student studying computer science."><div class="footer__author-links"><div class="author-links">
   <ul class="menu menu--nowrap menu--inline"><li title="發郵件給我。">
       <a class="button button--circle mail-button" itemprop="email" href="mailto:frankkuo@protonmail.com" target="_blank">
         <i class="fas fa-envelope"></i>
