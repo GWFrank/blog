@@ -22,7 +22,7 @@ url     : # the base hostname & protocol for your site e.g. https://www.someone.
 baseurl : /blog # does not include hostname
 title   : GWFrank's Blog
 description: > # this means to ignore newlines until "Language & timezone"
-  I write things about programming, yugioh , and fingerstyle guitar.
+  I might write things about programming, yugioh, and fingerstyle guitar.
 
 
 ## => Language and Timezone
@@ -38,7 +38,7 @@ author:
   name      : GWFrank
   url       :
   avatar    : # path or url of avatar image (square)
-  bio       : A college student studying computer science.
+  bio       : A student studying computer science at csie department of National Taiwan University.
   email     : frankkuo@protonmail.com
   facebook  : frankkuo03 # "user_name" the last part of your profile url, e.g. https://www.facebook.com/user_name
   twitter   : # "user_name" the last part of your profile url, e.g. https://twitter.com/user_name
