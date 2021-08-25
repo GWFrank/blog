@@ -3,8 +3,7 @@ title: "計概期末專題 黑白棋Agent"
 tags: [programming, python]
 ---
 
-
-##  TLDR
+## TLDR
 
 今年(109-1)計概單班的期末專題(其實應該只算是一次作業？)是做一個黑白棋Agent，我和隊友用minimax + 神經網路做的evaluation實做，最後在31組中拿下第一名，對所有其他組都有超過0.5的勝率。這篇文章將會稍微紀錄一下開發的過程和一些心得及想法。
 
@@ -89,24 +88,24 @@ def matchup_mp(agent1, agent2, rounds=10, process_num=1, balanced=True):
         agent1
         agent2
         rounds (int): how many rounds of game (each going first)
-    
+
     Returns:
         tuple: ((agent1.s_depth, agent1_wins), (agent2.s_depth, agent2_wins), draws)
     """
-    
+
     agent1_w = 0
     agent2_w = 0
     draw = 0
-    
+
     # agent 1 go first as black
     pool = mp.Pool(process_num)
-    
+
     args = [(agent1, agent2) for _ in range(rounds)]
     game_results = pool.starmap(playgame, args)
 
     pool.close()
     pool.join()
-    
+
     for r in game_results:
         if r > 0:
             agent2_w += 1
@@ -114,17 +113,17 @@ def matchup_mp(agent1, agent2, rounds=10, process_num=1, balanced=True):
             agent1_w += 1
         elif r == 0:
             draw += 1
-    
+
     # agent 2 go first as black
     if balanced:
         pool = mp.Pool(process_num)
-        
+
         args = [(agent2, agent1) for _ in range(rounds)]
         game_results = pool.starmap(playgame, args)
 
         pool.close()
         pool.join()
-        
+
         for r in game_results:
             if r > 0:
                 agent1_w += 1
@@ -132,7 +131,7 @@ def matchup_mp(agent1, agent2, rounds=10, process_num=1, balanced=True):
                 agent2_w += 1
             elif r == 0:
                 draw += 1
-    
+
     agent1.win += agent1_w
     agent1.loss += agent2_w
     agent1.draw += draw
@@ -156,25 +155,25 @@ def matchup_mp(agent1, agent2, rounds=10, process_num=1, balanced=True):
 
 **`BasicMinimaxAgent` (先手, `n=4`) vs `RandomAgent`**
 
- Depth        |     1 |     2 |     3 |     4 |     5 |     6 
- ------------ | ----: | ----: | ----: | ----: | ----: | ----:
- Games        |  5000 |  5000 |  5000 |  5000 |  5000 |  2000
- Wins | 4404 | 4689 | 4841 | 4921 | 4954 | 1993 
- Win%         | .881 | .938 | .968 | .984 | .991 | .997 
- Sigma        | .0046 | .0034 | .0025 | .0018 | .0014 | .0013 
- Win% - Sigma | .876 | .934 | .966 | .982 | .989 | .995 
- Win% + Sigma | .885 | .941 | .971 | .986 | .992 | .998 
+| Depth        | 1     | 2     | 3     | 4     | 5     | 6     |
+| ------------ | -----:| -----:| -----:| -----:| -----:| -----:|
+| Games        | 5000  | 5000  | 5000  | 5000  | 5000  | 2000  |
+| Wins         | 4404  | 4689  | 4841  | 4921  | 4954  | 1993  |
+| Win%         | .881  | .938  | .968  | .984  | .991  | .997  |
+| Sigma        | .0046 | .0034 | .0025 | .0018 | .0014 | .0013 |
+| Win% - Sigma | .876  | .934  | .966  | .982  | .989  | .995  |
+| Win% + Sigma | .885  | .941  | .971  | .986  | .992  | .998  |
 
 **`LittleRandomAgent` (先手, `p=0.03`) vs `RandomAgent`**
 
-| Depth        |     1 |     2 |     3 |     4 |     5 |     6 |
-| ------------ | ----: | ----: | ----: | ----: | ----: | ----: |
-| Games        |  5000 |  5000 |  5000 |  5000 |  5000 |  2000 |
-| Wins         |  4446 |  4640 |  4818 |  4889 |  4951 |  1990 |
-| Win%         |  .889 |  .928 |  .964 |  .978 |  .990 |  .995 |
+| Depth        | 1     | 2     | 3     | 4     | 5     | 6     |
+| ------------ | -----:| -----:| -----:| -----:| -----:| -----:|
+| Games        | 5000  | 5000  | 5000  | 5000  | 5000  | 2000  |
+| Wins         | 4446  | 4640  | 4818  | 4889  | 4951  | 1990  |
+| Win%         | .889  | .928  | .964  | .978  | .990  | .995  |
 | Sigma        | .0044 | .0037 | .0026 | .0021 | .0014 | .0016 |
-| Win% - Sigma |  .885 |  .924 |  .961 |  .976 |  .989 |  .993 |
-| Win% + Sigma |  .894 |  .932 |  .966 |  .980 |  .992 |  .997 |
+| Win% - Sigma | .885  | .924  | .961  | .976  | .989  | .993  |
+| Win% + Sigma | .894  | .932  | .966  | .980  | .992  | .997  |
 
 兩者勝率差不多，但由於第二種隨機太不穩定，在實力接近時很可能會搞砸最重要的收尾，最終還是選擇第一種隨機。
 
@@ -182,14 +181,14 @@ def matchup_mp(agent1, agent2, rounds=10, process_num=1, balanced=True):
 
 **`NEATAgent` (先手) vs `RandomAgent`**
 
- Depth        |     1 |     2 |     3 |     4 |     5 |     6 
- ------------ | ----: | ----: | ----: | ----: | ----: | ----:
- Games        | 5000 |  5000 |  5000 |  5000 |  5000 |  2000
- Wins        | 4423 | 4659 | 4846 | 4926 | 4969 | 1987 
- Win% | .885 | .932 | .969 | .985 | .994 | .994 
- Sigma        | .0045 | .0036 | .0024 | .0017 | .0011 | .0018 
- Win% - Sigma | .880 | .928 | .967 | .983 | .993 | .992 
- Win% + Sigma | .889 | .935 | .972 | .987 | .995 | .995 
+| Depth        | 1     | 2     | 3     | 4     | 5     | 6     |
+| ------------ | -----:| -----:| -----:| -----:| -----:| -----:|
+| Games        | 5000  | 5000  | 5000  | 5000  | 5000  | 2000  |
+| Wins         | 4423  | 4659  | 4846  | 4926  | 4969  | 1987  |
+| Win%         | .885  | .932  | .969  | .985  | .994  | .994  |
+| Sigma        | .0045 | .0036 | .0024 | .0017 | .0011 | .0018 |
+| Win% - Sigma | .880  | .928  | .967  | .983  | .993  | .992  |
+| Win% + Sigma | .889  | .935  | .972  | .987  | .995  | .995  |
 
 看起來和`BasicMinimaxAgent`無太大差別。
 
@@ -198,8 +197,8 @@ def matchup_mp(agent1, agent2, rounds=10, process_num=1, balanced=True):
 **`NEATAgent` vs `BasicMinimaxAgent`**
 
 | NEAT Wins | Basic Minimax Wins | Draw |
-| --------: | -----------------: | ---: |
-|      5002 |               4784 |  214 |
+| ---------:| ------------------:| ----:|
+| 5002      | 4784               | 214  |
 
 看來NEAT還是稍微好一點，但沒有壓倒性的勝利。
 
