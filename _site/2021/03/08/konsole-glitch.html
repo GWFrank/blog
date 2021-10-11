@@ -1,10 +1,10 @@
 <!DOCTYPE html><html lang="zh-TW">
   <head><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"><title>學習筆記 - 網路 Overview - GWFrank's Blog</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"><title>解決KDE Konsole在非整數倍縮放時的水平白色線條 - GWFrank's Blog</title>
 
-<meta name="description" content="總之，網路是怎麼運作的？">
-<link rel="canonical" href="http://0.0.0.0:4000/blog/2021/07/17/%E5%AD%B8%E7%BF%92%E7%AD%86%E8%A8%98-%E7%B6%B2%E8%B7%AFoverview.html"><link rel="alternate" type="application/rss+xml" title="GWFrank's Blog" href="/blog/feed.xml"><link rel="apple-touch-icon" sizes="180x180" href="/blog/favicon/apple-touch-icon.png">
+<meta name="description" content="ProblemKDE Konsole 在使用非整數倍縮放(1.25, 1.5 etc.)時，可能會出現如下圖的異常會有水平線條透出背後視窗的顏色Solution「編輯設定檔」→「外觀」→「雜項」→「行間距」，把行間距設為1px(有些會需要更高)">
+<link rel="canonical" href="http://0.0.0.0:4000/blog/2021/03/08/konsole-glitch.html"><link rel="alternate" type="application/rss+xml" title="GWFrank's Blog" href="/blog/feed.xml"><link rel="apple-touch-icon" sizes="180x180" href="/blog/favicon/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/blog/favicon/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/blog/favicon/favicon-16x16.png">
 <link rel="manifest" href="/blog/favicon/site.webmanifest">
@@ -281,34 +281,35 @@
               <div class="col-main cell cell--auto"><!-- start custom main top snippet -->
 
 <!-- end custom main top snippet -->
-<article itemscope itemtype="http://schema.org/Article"><div class="article__header"><header><h1>學習筆記 - 網路 Overview</h1></header><span class="split-space">&nbsp;</span>
+<article itemscope itemtype="http://schema.org/Article"><div class="article__header"><header><h1>解決KDE Konsole在非整數倍縮放時的水平白色線條</h1></header><span class="split-space">&nbsp;</span>
           <a class="edit-on-github"
             title="在 Github 上修改"
-            href="https://github.com/GWFrank/blog/tree/main/_posts/2021-07-17-學習筆記-網路overview.md">
-            <i class="far fa-edit"></i></a></div><meta itemprop="headline" content="學習筆記 - 網路 Overview"><div class="article__info clearfix"><ul class="left-col menu"><li>
+            href="https://github.com/GWFrank/blog/tree/main/_posts/2021-03-08-konsole-glitch.md">
+            <i class="far fa-edit"></i></a></div><meta itemprop="headline" content="解決KDE Konsole在非整數倍縮放時的水平白色線條"><div class="article__info clearfix"><ul class="left-col menu"><li>
               <a class="button button--secondary button--pill button--sm"
-                href="/blog/archive.html?tag=notes">notes</a>
-            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>2021年 07月17日</span>
-            </li></ul></div><meta itemprop="author" content="GWFrank"/><meta itemprop="datePublished" content="2021-07-17T00:00:00+08:00">
-    <meta itemprop="keywords" content="notes"><div class="js-article-content"><div class="layout--article"><!-- start custom article top snippet -->
+                href="/blog/archive.html?tag=linux">linux</a>
+            </li><li>
+              <a class="button button--secondary button--pill button--sm"
+                href="/blog/archive.html?tag=solutions">solutions</a>
+            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>2021年 03月08日</span>
+            </li></ul></div><meta itemprop="author" content="GWFrank"/><meta itemprop="datePublished" content="2021-03-08T00:00:00+08:00">
+    <meta itemprop="keywords" content="linux,solutions"><div class="js-article-content"><div class="layout--article"><!-- start custom article top snippet -->
 
 <!-- end custom article top snippet -->
-<div class="article__content" itemprop="articleBody"><h2 id="總之網路是怎麼運作的">總之，網路是怎麼運作的？</h2>
+<div class="article__content" itemprop="articleBody"><h2 id="problem">Problem</h2>
 
-<!--more-->
+<p>KDE Konsole 在使用非整數倍縮放(1.25, 1.5 etc.)時，可能會出現如下圖的異常</p>
 
-<p>先從他的目標開始，也就是讓各個裝置能互相傳遞資料。要讓兩台電腦溝通，最 naive 的想法可能是規範某種物理接口和對應的線材，接線就能用了。但當裝置數量增加，每次都在兩台電腦間連著一條線不太實際，不如設計一個電腦是專門負責轉發這些資料，然後把所有裝置想辦法連到他就好了。</p>
+<p><img src="/blog/assets/post_pics/konsole_glitch.png" alt="konsole_glitch" /></p>
 
-<p>Switch (aka 交換器)就是在做這件事情，他會連接許多電腦形成 LAN (Local Area Network)。這個 LAN 裡面的電腦要把封包丟給其他電腦的時候，就會丟給 switch ， switch 會看封包上寫的目的地 (接收端 MAC Address) ，根據他存的一張實體 port 和 MAC address 對應的表來轉傳。這個處理資料的層級又被稱為 Link Layer，也會被稱為 Layer 2 。而 Layer 1 則是 Physical Layer ，也就是網路線、 WiFi 的無線電波的東東。</p>
+<p>會有水平線條透出背後視窗的顏色</p>
 
-<h2 id="ip之類的東西又是出現在哪裡">IP之類的東西又是出現在哪裡？</h2>
+<h2 id="solution">Solution</h2>
 
-<p>這個就是 Network Layer ，也就是 Layer 3 主要負責的了。這裡用來辨別裝置的東西是 IP Address ，也就是長的像是 <code class="language-plaintext highlighter-rouge">140.112.30.26</code> 的一串數字。負責把封包轉傳到正確的 LAN 的機器叫做 router (aka 路由器)，找到一條由 <code class="language-plaintext highlighter-rouge">src</code> 往 <code class="language-plaintext highlighter-rouge">dst</code> 傳遞封包的路徑的這件事情就叫做route。</p>
+<p>「編輯設定檔」→「外觀」→「雜項」→「行間距」，把行間距設為1px(有些會需要更高)</p>
 
-<p>一台電腦通常同時會有很多的程式、服務在跑，而區別程式則是在 Transmission Layer ，也就是 Layer 4 做的。這裡是用不同的 “port” 來分，例如 <code class="language-plaintext highlighter-rouge">http</code> 通常是在 port 80 、 <code class="language-plaintext highlighter-rouge">https</code> 通常在 port 443。</p>
-
-<p>Layer 5 是 Application Layer，有些比較細的分法 (像是 OSI Model) 會再細分。這裡的東西就比較跟應用相關，像是網頁的 <code class="language-plaintext highlighter-rouge">http</code> 、傳檔案的 <code class="language-plaintext highlighter-rouge">ftp</code> 、電子郵件的 <code class="language-plaintext highlighter-rouge">smtp</code> 、域名系統 <code class="language-plaintext highlighter-rouge">dns</code>。</p>
-</div><section class="article__sharing d-print-none"></section><div class="d-print-none"><footer class="article__footer"><meta itemprop="dateModified" content="2021-07-17T00:00:00+08:00"><!-- start custom article footer snippet -->
+<p><img src="/blog/assets/post_pics/konsole_glitch_solution.png" alt="solution" /></p>
+</div><section class="article__sharing d-print-none"></section><div class="d-print-none"><footer class="article__footer"><meta itemprop="dateModified" content="2021-03-08T00:00:00+08:00"><!-- start custom article footer snippet -->
 
 <!-- end custom article footer snippet -->
 <div class="article__subscribe"><div class="subscribe"><i class="fas fa-rss"></i> <a type="application/rss+xml" href="/blog/feed.xml">訂閱</a></div>
@@ -319,7 +320,7 @@
       </a>
     </p>
   </div></div></footer>
-<div class="article__section-navigator clearfix"><div class="previous"><span>上篇</span><a href="/blog/2021/03/08/%E8%A7%A3%E6%B1%BAKonsole%E7%9A%84%E6%B0%B4%E5%B9%B3%E7%B7%9A%E6%A2%9D.html">解決KDE Konsole在非整數倍縮放時的水平白色線條</a></div></div></div>
+<div class="article__section-navigator clearfix"><div class="previous"><span>上篇</span><a href="/blog/2021/02/22/reversi-agent.html">計概期末專題 黑白棋Agent</a></div><div class="next"><span>下篇</span><a href="/blog/2021/07/17/note-network.html">學習筆記 - 網路 Overview</a></div></div></div>
 
 </div>
 

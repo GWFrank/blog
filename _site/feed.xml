@@ -1,5 +1,58 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="zh-TW"><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="http://0.0.0.0:4000/blog/feed.xml" rel="self" type="application/atom+xml" /><link href="http://0.0.0.0:4000/blog/" rel="alternate" type="text/html" hreflang="zh-TW" /><updated>2021-07-20T01:34:58+08:00</updated><id>http://0.0.0.0:4000/blog/feed.xml</id><title type="html">GWFrank’s Blog</title><subtitle>I might write things about programming, yugioh, and fingerstyle guitar.
-</subtitle><author><name>GWFrank</name><email>frankkuo@protonmail.com</email></author><entry><title type="html">學習筆記 - 網路 Overview</title><link href="http://0.0.0.0:4000/blog/2021/07/17/%E5%AD%B8%E7%BF%92%E7%AD%86%E8%A8%98-%E7%B6%B2%E8%B7%AFoverview.html" rel="alternate" type="text/html" title="學習筆記 - 網路 Overview" /><published>2021-07-17T00:00:00+08:00</published><updated>2021-07-17T00:00:00+08:00</updated><id>http://0.0.0.0:4000/blog/2021/07/17/%E5%AD%B8%E7%BF%92%E7%AD%86%E8%A8%98-%E7%B6%B2%E8%B7%AFoverview</id><content type="html" xml:base="http://0.0.0.0:4000/blog/2021/07/17/%E5%AD%B8%E7%BF%92%E7%AD%86%E8%A8%98-%E7%B6%B2%E8%B7%AFoverview.html">&lt;h2 id=&quot;總之網路是怎麼運作的&quot;&gt;總之，網路是怎麼運作的？&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="zh-TW"><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="http://0.0.0.0:4000/blog/feed.xml" rel="self" type="application/atom+xml" /><link href="http://0.0.0.0:4000/blog/" rel="alternate" type="text/html" hreflang="zh-TW" /><updated>2021-10-11T11:48:00+08:00</updated><id>http://0.0.0.0:4000/blog/feed.xml</id><title type="html">GWFrank’s Blog</title><subtitle>I might write things about programming, yugioh, and fingerstyle guitar.
+</subtitle><author><name>GWFrank</name><email>frankkuo@protonmail.com</email></author><entry><title type="html">筆電上使用Linux的兩個工具 - Howdy &amp;amp; Touchégg</title><link href="http://0.0.0.0:4000/blog/2021/08/23/linux-on-laptop.html" rel="alternate" type="text/html" title="筆電上使用Linux的兩個工具 - Howdy &amp;amp; Touchégg" /><published>2021-08-23T00:00:00+08:00</published><updated>2021-08-23T00:00:00+08:00</updated><id>http://0.0.0.0:4000/blog/2021/08/23/linux-on-laptop</id><content type="html" xml:base="http://0.0.0.0:4000/blog/2021/08/23/linux-on-laptop.html">&lt;h2 id=&quot;tldr&quot;&gt;TLDR&lt;/h2&gt;
+
+&lt;p&gt;這篇文章會記錄幾個我在筆電上使用 Linux 時找到的一些工具，這些工具大多是補足一些 Windows 上不須額外設定就有，但 Linux 上需要自己去找的功能。&lt;/p&gt;
+
+&lt;h2 id=&quot;臉部辨識解鎖---howdy&quot;&gt;臉部辨識解鎖 - Howdy&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/boltgolt/howdy&quot;&gt;GitHub - boltgolt/howdy: 🛡️ Windows Hello™ style facial authentication for Linux&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Howdy 是一個提供臉部辨識驗證的工具，可以用在登入、解鎖、&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;sudo&lt;/code&gt;等等。&lt;/p&gt;
+
+&lt;h3 id=&quot;安裝及設定&quot;&gt;安裝及設定&lt;/h3&gt;
+
+&lt;p&gt;安裝步驟請參考 Github repo 裡面的 README。在等待安裝時，先用這個指令確定你要用的紅外線鏡頭是哪一個：&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;v4l2-ctl &lt;span class=&quot;nt&quot;&gt;--list-devices&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;在輸出裡裝置可能有兩個或四個 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/dev/video*&lt;/code&gt; ，大多數的情況下選擇第一個 (或是第三個，如果有的話) 會是對的。&lt;/p&gt;
+
+&lt;p&gt;安裝完成後先用這個指令設定 howdy：&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;howdy config
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;在設定檔裡找到 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;device_path&lt;/code&gt;，並把它設為剛才找到的路徑。另外一個可以調整的參數是 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;dark_threshold&lt;/code&gt;，如果常常無法辨識成功的話，可以先把這個值提高。做好設定後先測試攝影機能不能正確運作：&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;howdy &lt;span class=&quot;nb&quot;&gt;test&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;確認能在跳出的視窗中看到自己的臉後，開始為你的使用者加入臉部模型：&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;howdy add
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;如果是用 Ubuntu 的話到這裡就可以直接使用 howdy 了。 Arch 和 Manjaro 則需要編輯一些 pam 的設定檔，詳細步驟可以參考這個 &lt;a href=&quot;https://gist.github.com/pastleo/76597c6ae8f95bb02982fea6df3a3ade&quot;&gt;Setup face recognition authentication on ArchLinux and KDE Plasma using howdy · GitHub&lt;/a&gt;。&lt;/p&gt;
+
+&lt;h3 id=&quot;其他事項&quot;&gt;其他事項&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;非紅外線的鏡頭也是可以使用 howdy ，不過有紅外線鏡頭的話還是用紅外線比較好。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Gnome keyring 、 kdewallet 在登入時可能沒辦法一起解鎖，不安全的解法是直接把這兩個的密碼拿掉，風險請自行評估。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;在 SDDM (KDE預設的DM) 用 howdy 滿可能會有問題，我自己是換成用 LightDM 。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;如同 README 裡作者於最後所說， howdy 並沒有比密碼安全，也不會變得比密碼安全。&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;觸控板手勢---touchégg&quot;&gt;觸控板手勢 - Touchégg&lt;/h2&gt;</content><author><name>GWFrank</name><email>frankkuo@protonmail.com</email></author><category term="linux" /><summary type="html">TLDR 這篇文章會記錄幾個我在筆電上使用 Linux 時找到的一些工具，這些工具大多是補足一些 Windows 上不須額外設定就有，但 Linux 上需要自己去找的功能。 臉部辨識解鎖 - Howdy GitHub - boltgolt/howdy: 🛡️ Windows Hello™ style facial authentication for Linux Howdy 是一個提供臉部辨識驗證的工具，可以用在登入、解鎖、sudo等等。 安裝及設定 安裝步驟請參考 Github repo 裡面的 README。在等待安裝時，先用這個指令確定你要用的紅外線鏡頭是哪一個： v4l2-ctl --list-devices 在輸出裡裝置可能有兩個或四個 /dev/video* ，大多數的情況下選擇第一個 (或是第三個，如果有的話) 會是對的。 安裝完成後先用這個指令設定 howdy： sudo howdy config 在設定檔裡找到 device_path，並把它設為剛才找到的路徑。另外一個可以調整的參數是 dark_threshold，如果常常無法辨識成功的話，可以先把這個值提高。做好設定後先測試攝影機能不能正確運作： sudo howdy test 確認能在跳出的視窗中看到自己的臉後，開始為你的使用者加入臉部模型： sudo howdy add 如果是用 Ubuntu 的話到這裡就可以直接使用 howdy 了。 Arch 和 Manjaro 則需要編輯一些 pam 的設定檔，詳細步驟可以參考這個 Setup face recognition authentication on ArchLinux and KDE Plasma using howdy · GitHub。 其他事項 非紅外線的鏡頭也是可以使用 howdy ，不過有紅外線鏡頭的話還是用紅外線比較好。 Gnome keyring 、 kdewallet 在登入時可能沒辦法一起解鎖，不安全的解法是直接把這兩個的密碼拿掉，風險請自行評估。 在 SDDM (KDE預設的DM) 用 howdy 滿可能會有問題，我自己是換成用 LightDM 。 如同 README 裡作者於最後所說， howdy 並沒有比密碼安全，也不會變得比密碼安全。 觸控板手勢 - Touchégg</summary></entry><entry><title type="html">學習筆記 - 網路 Overview</title><link href="http://0.0.0.0:4000/blog/2021/07/17/note-network.html" rel="alternate" type="text/html" title="學習筆記 - 網路 Overview" /><published>2021-07-17T00:00:00+08:00</published><updated>2021-07-17T00:00:00+08:00</updated><id>http://0.0.0.0:4000/blog/2021/07/17/note-network</id><content type="html" xml:base="http://0.0.0.0:4000/blog/2021/07/17/note-network.html">&lt;h2 id=&quot;總之網路是怎麼運作的&quot;&gt;總之，網路是怎麼運作的？&lt;/h2&gt;
 
 &lt;!--more--&gt;
 
@@ -13,7 +66,7 @@
 
 &lt;p&gt;一台電腦通常同時會有很多的程式、服務在跑，而區別程式則是在 Transmission Layer ，也就是 Layer 4 做的。這裡是用不同的 “port” 來分，例如 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;http&lt;/code&gt; 通常是在 port 80 、 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;https&lt;/code&gt; 通常在 port 443。&lt;/p&gt;
 
-&lt;p&gt;Layer 5 是 Application Layer，有些比較細的分法 (像是 OSI Model) 會再細分。這裡的東西就比較跟應用相關，像是網頁的 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;http&lt;/code&gt; 、傳檔案的 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ftp&lt;/code&gt; 、電子郵件的 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;smtp&lt;/code&gt; 、域名系統 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;dns&lt;/code&gt;。&lt;/p&gt;</content><author><name>GWFrank</name><email>frankkuo@protonmail.com</email></author><category term="notes" /><summary type="html">總之，網路是怎麼運作的？</summary></entry><entry><title type="html">解決KDE Konsole在非整數倍縮放時的水平白色線條</title><link href="http://0.0.0.0:4000/blog/2021/03/08/%E8%A7%A3%E6%B1%BAKonsole%E7%9A%84%E6%B0%B4%E5%B9%B3%E7%B7%9A%E6%A2%9D.html" rel="alternate" type="text/html" title="解決KDE Konsole在非整數倍縮放時的水平白色線條" /><published>2021-03-08T00:00:00+08:00</published><updated>2021-03-08T00:00:00+08:00</updated><id>http://0.0.0.0:4000/blog/2021/03/08/%E8%A7%A3%E6%B1%BAKonsole%E7%9A%84%E6%B0%B4%E5%B9%B3%E7%B7%9A%E6%A2%9D</id><content type="html" xml:base="http://0.0.0.0:4000/blog/2021/03/08/%E8%A7%A3%E6%B1%BAKonsole%E7%9A%84%E6%B0%B4%E5%B9%B3%E7%B7%9A%E6%A2%9D.html">&lt;h2 id=&quot;problem&quot;&gt;Problem&lt;/h2&gt;
+&lt;p&gt;Layer 5 是 Application Layer，有些比較細的分法 (像是 OSI Model) 會再細分。這裡的東西就比較跟應用相關，像是網頁的 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;http&lt;/code&gt; 、傳檔案的 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ftp&lt;/code&gt; 、電子郵件的 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;smtp&lt;/code&gt; 、域名系統 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;dns&lt;/code&gt;。&lt;/p&gt;</content><author><name>GWFrank</name><email>frankkuo@protonmail.com</email></author><category term="notes" /><summary type="html">總之，網路是怎麼運作的？</summary></entry><entry><title type="html">解決KDE Konsole在非整數倍縮放時的水平白色線條</title><link href="http://0.0.0.0:4000/blog/2021/03/08/konsole-glitch.html" rel="alternate" type="text/html" title="解決KDE Konsole在非整數倍縮放時的水平白色線條" /><published>2021-03-08T00:00:00+08:00</published><updated>2021-03-08T00:00:00+08:00</updated><id>http://0.0.0.0:4000/blog/2021/03/08/konsole-glitch</id><content type="html" xml:base="http://0.0.0.0:4000/blog/2021/03/08/konsole-glitch.html">&lt;h2 id=&quot;problem&quot;&gt;Problem&lt;/h2&gt;
 
 &lt;p&gt;KDE Konsole 在使用非整數倍縮放(1.25, 1.5 etc.)時，可能會出現如下圖的異常&lt;/p&gt;
 
@@ -25,7 +78,7 @@
 
 &lt;p&gt;「編輯設定檔」→「外觀」→「雜項」→「行間距」，把行間距設為1px(有些會需要更高)&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/blog/assets/post_pics/konsole_glitch_solution.png&quot; alt=&quot;solution&quot; /&gt;&lt;/p&gt;</content><author><name>GWFrank</name><email>frankkuo@protonmail.com</email></author><category term="linux" /><category term="solutions" /><summary type="html">Problem KDE Konsole 在使用非整數倍縮放(1.25, 1.5 etc.)時，可能會出現如下圖的異常 會有水平線條透出背後視窗的顏色 Solution 「編輯設定檔」→「外觀」→「雜項」→「行間距」，把行間距設為1px(有些會需要更高)</summary></entry><entry><title type="html">計概期末專題 黑白棋Agent</title><link href="http://0.0.0.0:4000/blog/2021/02/22/%E8%A8%88%E6%A6%82%E6%9C%9F%E6%9C%AB%E5%B0%88%E9%A1%8C-%E9%BB%91%E7%99%BD%E6%A3%8B.html" rel="alternate" type="text/html" title="計概期末專題 黑白棋Agent" /><published>2021-02-22T00:00:00+08:00</published><updated>2021-02-22T00:00:00+08:00</updated><id>http://0.0.0.0:4000/blog/2021/02/22/%E8%A8%88%E6%A6%82%E6%9C%9F%E6%9C%AB%E5%B0%88%E9%A1%8C-%E9%BB%91%E7%99%BD%E6%A3%8B</id><content type="html" xml:base="http://0.0.0.0:4000/blog/2021/02/22/%E8%A8%88%E6%A6%82%E6%9C%9F%E6%9C%AB%E5%B0%88%E9%A1%8C-%E9%BB%91%E7%99%BD%E6%A3%8B.html">&lt;h2 id=&quot;tldr&quot;&gt;TLDR&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&quot;/blog/assets/post_pics/konsole_glitch_solution.png&quot; alt=&quot;solution&quot; /&gt;&lt;/p&gt;</content><author><name>GWFrank</name><email>frankkuo@protonmail.com</email></author><category term="linux" /><category term="solutions" /><summary type="html">Problem KDE Konsole 在使用非整數倍縮放(1.25, 1.5 etc.)時，可能會出現如下圖的異常 會有水平線條透出背後視窗的顏色 Solution 「編輯設定檔」→「外觀」→「雜項」→「行間距」，把行間距設為1px(有些會需要更高)</summary></entry><entry><title type="html">計概期末專題 黑白棋Agent</title><link href="http://0.0.0.0:4000/blog/2021/02/22/reversi-agent.html" rel="alternate" type="text/html" title="計概期末專題 黑白棋Agent" /><published>2021-02-22T00:00:00+08:00</published><updated>2021-02-22T00:00:00+08:00</updated><id>http://0.0.0.0:4000/blog/2021/02/22/reversi-agent</id><content type="html" xml:base="http://0.0.0.0:4000/blog/2021/02/22/reversi-agent.html">&lt;h2 id=&quot;tldr&quot;&gt;TLDR&lt;/h2&gt;
 
 &lt;p&gt;今年(109-1)計概單班的期末專題(其實應該只算是一次作業？)是做一個黑白棋Agent，我和隊友用minimax + 神經網路做的evaluation實做，最後在31組中拿下第一名，對所有其他組都有超過0.5的勝率。這篇文章將會稍微紀錄一下開發的過程和一些心得及想法。&lt;/p&gt;
 
@@ -108,24 +161,24 @@
         agent1
         agent2
         rounds (int): how many rounds of game (each going first)
-    
+
     Returns:
         tuple: ((agent1.s_depth, agent1_wins), (agent2.s_depth, agent2_wins), draws)
     &quot;&quot;&quot;&lt;/span&gt;
-    
+
     &lt;span class=&quot;n&quot;&gt;agent1_w&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;
     &lt;span class=&quot;n&quot;&gt;agent2_w&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;
     &lt;span class=&quot;n&quot;&gt;draw&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;
-    
+
     &lt;span class=&quot;c1&quot;&gt;# agent 1 go first as black
 &lt;/span&gt;    &lt;span class=&quot;n&quot;&gt;pool&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Pool&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;process_num&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-    
+
     &lt;span class=&quot;n&quot;&gt;args&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;agent1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;agent2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;_&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;rounds&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)]&lt;/span&gt;
     &lt;span class=&quot;n&quot;&gt;game_results&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pool&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;starmap&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;playgame&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;args&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 
     &lt;span class=&quot;n&quot;&gt;pool&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;close&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
     &lt;span class=&quot;n&quot;&gt;pool&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;join&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-    
+
     &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;r&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;game_results&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
         &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;r&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
             &lt;span class=&quot;n&quot;&gt;agent2_w&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
@@ -133,17 +186,17 @@
             &lt;span class=&quot;n&quot;&gt;agent1_w&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
         &lt;span class=&quot;k&quot;&gt;elif&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;r&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
             &lt;span class=&quot;n&quot;&gt;draw&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
-    
+
     &lt;span class=&quot;c1&quot;&gt;# agent 2 go first as black
 &lt;/span&gt;    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;balanced&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
         &lt;span class=&quot;n&quot;&gt;pool&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Pool&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;process_num&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-        
+
         &lt;span class=&quot;n&quot;&gt;args&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;agent2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;agent1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;_&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;rounds&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)]&lt;/span&gt;
         &lt;span class=&quot;n&quot;&gt;game_results&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pool&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;starmap&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;playgame&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;args&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 
         &lt;span class=&quot;n&quot;&gt;pool&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;close&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
         &lt;span class=&quot;n&quot;&gt;pool&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;join&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-        
+
         &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;r&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;game_results&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
             &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;r&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
                 &lt;span class=&quot;n&quot;&gt;agent1_w&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
@@ -151,7 +204,7 @@
                 &lt;span class=&quot;n&quot;&gt;agent2_w&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
             &lt;span class=&quot;k&quot;&gt;elif&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;r&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
                 &lt;span class=&quot;n&quot;&gt;draw&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
-    
+
     &lt;span class=&quot;n&quot;&gt;agent1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;win&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;agent1_w&lt;/span&gt;
     &lt;span class=&quot;n&quot;&gt;agent1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;loss&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;agent2_w&lt;/span&gt;
     &lt;span class=&quot;n&quot;&gt;agent1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;draw&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;draw&lt;/span&gt;
