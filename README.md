@@ -4,8 +4,11 @@ This is the repository for my blog hosted on github page. Head over [here](https
 
 To run this blog locally using docker, follow [this guide](https://tianqi.name/jekyll-TeXt-theme/docs/en/quick-start) to setup:
 ```shell
-docker run --rm -v "$PWD":/usr/src/app -w /usr/src/app ruby:2.7 bundle install
+# Generate Gemfile.lock
+docker run --rm -v "$PWD":/srv/jekyll -w /srv/jekyll ruby:2.7 bundle install
+# Build image docker_blog
 docker-compose -f ./docker/docker-compose.build-image.yml build
+# Create containe
 docker-compose -f ./docker/docker-compose.default.yml up
 ```
 

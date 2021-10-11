@@ -8,9 +8,9 @@ ENV LANGUAGE en_US.UTF-8
 # throw errors if Gemfile has been modified since Gemfile.lock
 RUN bundle config --global frozen 1
 
-WORKDIR /usr/src/app
+WORKDIR /srv/jekyll
 
-COPY Gemfile Gemfile.lock jekyll-text-theme.gemspec ./
+COPY Gemfile Gemfile.lock ./
 RUN bundle install
 
 EXPOSE 4000
