@@ -1,1 +1,0 @@
-window.TEXT_SEARCH_DATA={'posts':[{'title':"計概期末專題 黑白棋Agent",'url':"/blog/2021/02/22/reversi-agent.html"},{'title':"解決KDE Konsole在非整數倍縮放時的水平白色線條",'url':"/blog/2021/03/08/konsole-glitch.html"},{'title':"學習筆記 - 網路 Overview",'url':"/blog/2021/07/17/note-network.html"},{'title':"筆電上使用Linux的兩個工具 - Howdy & Touchégg",'url':"/blog/2021/08/23/linux-on-laptop.html"}]};
