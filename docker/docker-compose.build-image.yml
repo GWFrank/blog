@@ -1,7 +1,7 @@
-version: "3.5"
+version: "3.8"
 
 services:
-  jekyll-text-theme_dev:
+  blog:
     build:
       context: ../
-      dockerfile: Dockerfile.dev
+      dockerfile: Dockerfile
