@@ -45,7 +45,7 @@ social:
     - https://github.com/GWFrank       # change to your github homepage
     # Uncomment below to add more social links
     - https://www.facebook.com/frankkuo03
-    # - https://www.linkedin.com/in/username
+    - https://www.linkedin.com/in/huai-yuan-kuo-726b91222/
 
 google_site_verification: google_meta_tag_verification # change to your verification string
 
@@ -70,7 +70,7 @@ google_analytics:
 #     light  - Use the light color scheme
 #     dark   - Use the dark color scheme
 #
-theme_mode: dark # [light|dark]
+theme_mode: # [light|dark]
 
 # The CDN endpoint for images.
 # Notice that once it is assigned, the CDN url
@@ -80,7 +80,7 @@ theme_mode: dark # [light|dark]
 img_cdn: ''
 
 # the avatar on sidebar, support local or CORS resources
-avatar: ''
+avatar: 'assets/logo.png'
 
 # boolean type, the global switch for ToC in posts.
 toc: true

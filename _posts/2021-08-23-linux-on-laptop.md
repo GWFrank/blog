@@ -1,5 +1,5 @@
 ---
-title: "筆電上使用Linux的兩個工具 - Howdy & Touchégg"
+title: "筆電上使用Linux的幾個工具"
 tags: [linux]
 ---
 
@@ -43,7 +43,7 @@ sudo howdy add
 
 如果是用 Ubuntu 的話到這裡就可以直接使用 howdy 了。 Arch 和 Manjaro 則需要編輯一些 pam 的設定檔，詳細步驟可以參考這個 [Setup face recognition authentication on ArchLinux and KDE Plasma using howdy · GitHub](https://gist.github.com/pastleo/76597c6ae8f95bb02982fea6df3a3ade)。
 
-### 其他事項
+### 注意事項
 
 - 非紅外線的鏡頭也是可以使用 howdy ，不過有紅外線鏡頭的話還是用紅外線比較好。
 
@@ -54,3 +54,26 @@ sudo howdy add
 - 如同 README 裡作者於最後所說， howdy 並沒有比密碼安全，也不會變得比密碼安全。
 
 ## 觸控板手勢 - Touchégg
+
+[Github - JoseExposito/Touchégg](https://github.com/JoseExposito/touchegg)
+
+Touchegg 是一個提供可自訂觸控板手勢的工具，除了直接編輯 xml 檔案，也可以使用他的 GUI app [touche](https://github.com/JoseExposito/touche) 來做設定
+
+### 安裝
+
+直接參考 [README](https://github.com/JoseExposito/touchegg/blob/master/README.md)， Debian/Ubuntu 系的可以直接用官方 PPA ， Arch 系的有 AUR。
+
+PPA:
+
+```shell
+sudo add-apt-repository ppa:touchegg/stable
+sudo apt update
+sudo apt install touchegg
+```
+
+Arch 系的安裝完後可能需要手動啟用 touchegg 的 service。
+
+### 注意事項
+
+- Touchegg 現在只能在 X11 上跑， Wayland 使用者可以試試看 [fusuma](https://github.com/iberianpig/fusuma)。
+- Touchegg 底層是用 libinput ，所以只要支援 libinput 的就可以用。
