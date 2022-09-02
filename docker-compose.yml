@@ -1,13 +1,15 @@
 version: "3.8"
 
 services:
-  blog:
-    image: docker_blog
+  jekyll-server:
+    build:
+      dockerfile: Dockerfile
+    image: jekyll-server:latest
     ports:
       - 4000:4000
-    container_name: jekyll-blog
+    container_name: my-blog
     volumes:
-      - ..:/srv/jekyll
+      - .:/srv/jekyll
     stdin_open: true
     tty: true
     command: jekyll serve -H 0.0.0.0 -t

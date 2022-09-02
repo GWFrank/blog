@@ -7,12 +7,10 @@ To run this blog locally using docker, follow [this guide](https://tianqi.name/j
 ```shell
 # Generate Gemfile.lock
 docker run --rm -v "$PWD":/srv/jekyll -w /srv/jekyll ruby:2.7 bundle install
-# Build image docker_blog
-docker-compose -f ./docker/docker-compose.build-image.yml build
-# Create container
-docker-compose -f ./docker/docker-compose.default.yml up
+# Build image jekyll-server
+docker-compose build
+# Create and run the container
+docker-compose up
 ```
 
 Then visit [localhost:4000/blog/](http://localhost:4000/blog/).
-
-
