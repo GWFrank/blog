@@ -3,7 +3,8 @@ version: "3.8"
 services:
   jekyll-server:
     build:
-      dockerfile: Dockerfile
+      context: .
+      dockerfile: ./Dockerfile
     image: jekyll-server:latest
     ports:
       - 4000:4000
