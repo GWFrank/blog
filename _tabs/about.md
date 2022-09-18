@@ -1,25 +1,21 @@
 ---
-title: About
+title: 關於
 icon: fas fa-info-circle
-order: 4
+order: 1
 ---
 
-## 關於這裡
+## 我的學經歷
 
-### 我是誰
+- 2022/07 ~ 2022/08：Seed Program SDE Intern @ Ring, Amazon Devices
+- 2020/09 ~ present：臺灣大學資訊工程學系
+- 2017/09 ~ 2020/10：建國中學數理資優班
 
-學經歷
+## 感興趣的東西
 
-- 2020/9 ~ ：臺灣大學資訊工程學系
-- 2017/9 ~ 2020/10：建國中學數理資優班
-
-感興趣的東西
-
-- Programing
+- Programming
+- Linux desktop
 - 遊戲王
 - Fingerstyle Guitar
-- Jazz fusion
-
-### 這裡寫些什麼東西
-
-做project的記錄、解奇怪問題的記錄、課程評價，根據心情可能還有其他東西。
+  - 例如： 押尾光太郎, Michael Hedges, Andy McKee, Tommy Emmnauel
+- Jazz fusion, Funk
+  - 例如： T-Square, Casiopea, Dimension, Cory Wong, Mezzoforte, The Fearless Flyers

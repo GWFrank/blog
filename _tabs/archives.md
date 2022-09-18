@@ -1,7 +1,7 @@
 ---
 layout: archives
-title: Archives
+title: 文章列表
 icon: fas fa-archive
-order: 3
+order: 2
 ---
 

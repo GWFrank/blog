@@ -23,7 +23,7 @@ title: GWFrank's Blog                          # the main title
 tagline: My blog!   # it will display as the sub-title
 
 description: >-                        # used by seo meta and the atom feed
-  I might write things about programming, yugioh, and fingerstyle guitar.
+  寫些關於我做的專案、解過的奇怪問題、作為 Linux desktop 使用者的心得、還有個人的經驗
 
 # fill in the protocol & hostname for your site, e.g., 'https://username.github.io'
 url: 'https://gwfrank.github.io'

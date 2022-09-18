@@ -1,6 +1,7 @@
 ---
-title: "計概期末專題 黑白棋Agent"
-tags: [programming, python]
+title: "計概期末專題 - 黑白棋Agent"
+categories: [Projects]
+tags: [minimax, reversi]
 ---
 
 ## TLDR
