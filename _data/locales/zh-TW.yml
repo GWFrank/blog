@@ -13,7 +13,7 @@ tabs:
   home: 首頁
   categories: 分類
   tags: 標籤
-  archives: 存檔
+  archives: 文章列表
   about: 關於
 
 # the text displayed in the search bar & search results
@@ -53,7 +53,7 @@ not_found:
   statment: 抱歉，我們放錯了該網址，或者它指向了不存在的内容。
   hint_template: :HEAD_BAK嘗試再次尋找它，或在:ARCHIVES_PAGE上搜尋它。
   head_back: 返回主頁
-  archives_page: 存檔頁面
+  archives_page: 文章列表
 
 # ----- Posts related labels -----
 

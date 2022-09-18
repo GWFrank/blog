@@ -1,6 +1,7 @@
 ---
 title: "筆記 - 使用 conda 和 pip 建立 GPU 加速的 Pytorch 開發環境"
-tags: [notes, python]
+categories: [筆記, 開發]
+tags: [pytorch]
 ---
 
 ## 事前準備

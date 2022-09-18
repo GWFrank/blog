@@ -1,6 +1,6 @@
 ---
-title: "學習筆記 - 網路 Overview"
-tags: [notes]
+title: "筆記 - 網路 Overview"
+categories: [筆記, 整理]
 ---
 
 ## 總之，網路是怎麼運作的？
