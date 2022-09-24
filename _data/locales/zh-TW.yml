@@ -27,14 +27,6 @@ panel:
   trending_tags: 熱門標籤
   toc: 文章内容
 
-#  The liquid date format › http://strftime.net/
-date_format:
-  tooltip: '%F, %R %z'
-  post:
-    long: '%F'
-    short: '%m-%d'
-    archive_month: '%m月'
-
 copyright:
   # Shown at the bottom of the post
   license:
@@ -51,20 +43,17 @@ meta: 本站由 :PLATFORM 生成，採用 :THEME 主題。
 
 not_found:
   statment: 抱歉，我們放錯了該網址，或者它指向了不存在的内容。
-  hint_template: :HEAD_BAK嘗試再次尋找它，或在:ARCHIVES_PAGE上搜尋它。
-  head_back: 返回主頁
-  archives_page: 文章列表
+
+notification:
+  update_found: 發現新版本的內容。
+  update: 更新
 
 # ----- Posts related labels -----
 
 post:
-  published: 發表於
+  written_by: 作者
+  posted: 發表於
   updated: 更新於
-  timeago:
-    day: 天前
-    hour: 小時前
-    minute: 分鐘前
-    just_now: 剛剛
   words: 字
   pageview_measure: 次瀏覽
   read_time:

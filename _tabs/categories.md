@@ -1,6 +1,6 @@
 ---
 layout: categories
-title: 分類
+# title: 分類
 icon: fas fa-stream
 order: 3
 ---

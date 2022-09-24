@@ -6,7 +6,7 @@ To run this blog locally using docker, follow this:
 
 ```shell
 # Re-generate Gemfile.lock if needed
-docker run --rm -v "$PWD":/srv/jekyll -w /srv/jekyll ruby:3.0 bundle install
+docker run --rm -v "$PWD":/srv/jekyll -w /srv/jekyll ruby:3.0 bundle lock --update
 # Build image jekyll-server
 docker-compose build
 # Create and run the container
