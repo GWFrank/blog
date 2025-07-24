@@ -1,13 +1,13 @@
 ---
 title: "心得 - 2025 Fall CS Master 申請記錄"
-date: 2025-07-22 23:55:00 +0800
+date: 2025-07-24 20:46:00 +0800
 categories: [心得]
 tags: [study aboard]
 ---
 
 ## 前言
 
-趁著出國前的空檔，來把 '25 fall 申請季的個人心得記錄下來，冀望能讓提供有用的資訊給接下來要申請 CS Master 的人，順便積些功德以求快點排到洛桑的房子。
+趁著出國前的空檔，來把 '25 fall 申請季的個人心得記錄下來並留個資料點，冀望能提供有用的資訊給接下來要申請 CS Master 的人，也積些功德以求快點排到洛桑的房子。
 
 > Disclaimer：因為我也不是招生委員會的成員而且申請帶有隨機性，所以內容混雜了事實、推測、主觀臆測，請參考多方資料來做最終判斷。
 {: .prompt-warning }
@@ -112,7 +112,7 @@ Work Experience
 在聯絡潛在推薦人時（尤其是有一段時間沒互動的）可以順便寫一下自己和對方曾經在什麼場合共事，以及有什麼樣的事例能展現你的能力，幫助對方回想的同時也提供推薦信可用的材料。雖然說推薦信應該要是對被推薦人保密的，但有時推薦人會因為各種原因要請你先擬好稿。這個情況下如果對方是學界人士，那可能是對方太忙，就只能自己先寫一份了。但若對方是業界人士，則有可能是因為不知道學界的推薦信應該長什麼樣子，這時候我會和對方討論並提供一些參考資料，盡量避免自己寫推薦信。
 
 我自己找到關於撰寫推薦信的資源有這幾個：
-- [How to write good letters of recommendation | MIT Admissions](https://mitadmissions.org/apply/parents-educators/writingrecs/)
+- [How to write good letters of recommendation \| MIT Admissions](https://mitadmissions.org/apply/parents-educators/writingrecs/)
 <br/>這裡面包含了幾個可以引導寫作的問題，以及數個 example letter 和 critique。
 - [Writing a Letter of Recommendation](https://www.hhmi.org/sites/default/files/Educational%20Materials/Lab%20Management/letter.pdf)
 <br/>這個 19 頁的 pdf 有比較詳細的指引，包括各種段落與整封信件的範例。
@@ -142,9 +142,21 @@ Work Experience
 
 2024 下半年的美元匯率大概都在 32-33，讓整體費用變得更貴了。值得一提的是有些學校的申請費可以抵免，像是 Brown 在你註冊帳號後會寄信邀請你參加線上說明會，有去就免報名費。
 
-## 總結
+## 其他文章
 
-其實我個人認為
+這邊附上其他人寫的申請心得文：
+
+
+- [2025 Fall CS Master申請心得. Stanford Campus \| by Kuo-Han Hung 洪國瀚 \| Medium](https://medium.com/@khhung0906/2025-fall-cs-master%E7%94%B3%E8%AB%8B%E5%BF%83%E5%BE%97-801a65abcb19)
+- [2024 Fall US FE/CS 碩士申請心得 \| by Yi Hung \| Medium](https://medium.com/@starsstars/2024-fall-us-fe-cs-%E7%A2%A9%E5%A3%AB%E7%94%B3%E8%AB%8B%E5%BF%83%E5%BE%97-4baeeb2bb76d)
+- [[2024Fall] 美國碩士應屆申請心得大全. 因為申請的路上受到很多人的幫忙，也走了不少冤枉路，希望可以把一些心得記錄下來讓大… \| by Bear Tien \| Medium](https://medium.com/@stitch.hsiung/2024-fall-%E7%BE%8E%E5%9C%8B%E7%A2%A9%E5%A3%AB%E7%94%B3%E8%AB%8B%E5%BF%83%E5%BE%97%E5%A4%A7%E5%85%A8-b8e201d82486#36ae)
+- [2024 Fall CS/ECE Masters 申請心得. 上班族錄取 UT Austin, Gatech, CMU, UIUC… \| by Yun-Ping Lin \| Medium](https://medium.com/@linyunping/2024-fall-%E7%BE%8E%E5%9C%8B-cs-ece-%E7%A2%A9%E5%A3%AB%E7%94%B3%E8%AB%8B-3b7ee9c5f466)
+- [2024 Fall MSCS 申請雜談 \| by GiveMeOffer \| Medium](https://medium.com/@hsw2000/2024fall-mscs-%E7%94%B3%E8%AB%8B%E9%9B%9C%E8%AB%87-2022084dd4d8)
+- [2024 MSCS申請心得 - Wuch - Medium](https://medium.com/@wuch9015/2024-mscs%E7%94%B3%E8%AB%8B%E5%BF%83%E5%BE%97-0c0dae8d3215)
+- [2023 Fall US CS Master 申請心得. 前言 \| by Joe Tsai \| Medium](https://medium.com/@b07902064/2023-fall-us-cs-master-%E7%94%B3%E8%AB%8B%E5%BF%83%E5%BE%97-24b8801a3a94)
+- [23Fall 歐洲 MS CS/HCI 申請心得紀錄 \| Medium](https://medium.com/@w4a2y4/23fall-%E6%AD%90%E6%B4%B2-ms-cs-hci-%E7%94%B3%E8%AB%8B%E5%BF%83%E5%BE%97%E8%A8%98%E9%8C%84-38f2578953ac)
+- [2022 Fall MSCS 申請總結. 我在2022… \| by 林立珩 \| Medium](https://lihenglin.medium.com/2022-fall-mscs-%E7%94%B3%E8%AB%8B%E7%B8%BD%E7%B5%90-786894866fd1)
+- [2022 Fall CS Master 申請心得. CMU, UIUC, UMich, UW-Madison, UPenn… \| by Robert \| Medium](https://robert1003.medium.com/2022-fall-cs-master-%E7%94%B3%E8%AB%8B%E7%B4%80%E9%8C%84-d21418a129a5)
 
 ## 註解
 
