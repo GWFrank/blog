@@ -1,0 +1,35 @@
+baseURL = "https://gwfrank.github.io/blog/"
+title = "GWFrank's Blog"
+theme = "PaperMod"
+languageCode = "zh-tw"
+
+[params]
+title = "GWFrank's Blog"
+description = "GWFrank's Blog"
+DateFormat = "2006-01-02"
+
+[params.assets]
+favicon = "favicons/favicon.ico"
+favicon16x16 = "favicons/favicon-16x16.png"
+favicon32x32 = "favicons/favicon-32x32.png"
+apple_touch_icon = "favicons/apple-touch-icon.png"
+safari_pinned_tab = "favicons/safari-pinned-tab.svg"
+
+[params.profileMode]
+enable = false
+
+[params.homeInfoParams]
+Title = "Hi there!"
+Content = "Welcome, have a nice day! :)"
+
+[menu]
+[[menu.main]]
+identifier = "home"
+name = "Home"
+url = "/"
+weight = 1
+[[menu.main]]
+identifier = "about"
+name = "About"
+url = "/about/"
+weight = 2
